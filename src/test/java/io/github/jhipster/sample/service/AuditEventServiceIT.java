@@ -1,5 +1,6 @@
 package io.github.jhipster.sample.service;
 
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.domain.PersistentAuditEvent;
 import io.github.jhipster.sample.repository.PersistenceAuditEventRepository;
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
@@ -17,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

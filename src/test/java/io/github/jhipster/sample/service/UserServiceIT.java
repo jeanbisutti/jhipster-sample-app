@@ -2,6 +2,7 @@ package io.github.jhipster.sample.service;
 
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
 import io.github.jhipster.sample.config.Constants;
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.domain.User;
 import io.github.jhipster.sample.repository.UserRepository;
 import io.github.jhipster.sample.service.dto.UserDTO;
@@ -32,7 +33,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @Transactional
 public class UserServiceIT {
 

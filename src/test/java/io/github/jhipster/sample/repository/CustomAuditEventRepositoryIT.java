@@ -3,10 +3,13 @@ package io.github.jhipster.sample.repository;
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
 
 import io.github.jhipster.sample.config.Constants;
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.config.audit.AuditEventConverter;
 import io.github.jhipster.sample.domain.PersistentAuditEvent;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.quickperf.QuickPerfConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -28,7 +31,7 @@ import static io.github.jhipster.sample.repository.CustomAuditEventRepository.EV
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

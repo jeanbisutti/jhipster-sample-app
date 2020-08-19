@@ -1,6 +1,7 @@
 package io.github.jhipster.sample.web.rest;
 
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.domain.PersistentAuditEvent;
 import io.github.jhipster.sample.repository.PersistenceAuditEventRepository;
 import io.github.jhipster.sample.security.AuthoritiesConstants;
@@ -30,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @Transactional
 public class AuditResourceIT {
 

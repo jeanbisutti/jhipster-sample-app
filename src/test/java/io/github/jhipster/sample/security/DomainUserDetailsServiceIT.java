@@ -1,6 +1,7 @@
 package io.github.jhipster.sample.security;
 
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.domain.User;
 import io.github.jhipster.sample.repository.UserRepository;
 
@@ -21,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @Transactional
 public class DomainUserDetailsServiceIT {
 

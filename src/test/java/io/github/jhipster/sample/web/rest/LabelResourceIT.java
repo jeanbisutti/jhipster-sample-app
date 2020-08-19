@@ -1,6 +1,7 @@
 package io.github.jhipster.sample.web.rest;
 
 import io.github.jhipster.sample.JhipsterSampleApplicationApp;
+import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
 import io.github.jhipster.sample.domain.Label;
 import io.github.jhipster.sample.repository.LabelRepository;
 
@@ -24,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link LabelResource} REST controller.
  */
-@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
+@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
 @AutoConfigureMockMvc
 @WithMockUser
 public class LabelResourceIT {
@@ -140,7 +141,7 @@ public class LabelResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(label.getId().intValue())))
             .andExpect(jsonPath("$.[*].label").value(hasItem(DEFAULT_LABEL)));
     }
-    
+
     @Test
     @Transactional
     public void getLabel() throws Exception {
