@@ -1,11 +1,9 @@
 package io.github.jhipster.sample.service;
 
-import io.github.jhipster.sample.config.Constants;
-
-import io.github.jhipster.sample.JhipsterSampleApplicationApp;
-import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
-import io.github.jhipster.sample.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
+import io.github.jhipster.sample.JhipsterSampleApplicationApp;
+import io.github.jhipster.sample.config.Constants;
+import io.github.jhipster.sample.domain.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -34,14 +32,15 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 /**
  * Integration tests for {@link MailService}.
  */
-@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
+@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
 public class MailServiceIT {
 
     private static final String[] languages = {

@@ -12,7 +12,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 
 import java.util.concurrent.TimeUnit;
 
-import static io.github.jhipster.sample.config.StaticResourcesWebConfiguration.*;
+import static io.github.jhipster.sample.config.StaticResourcesWebConfiguration.RESOURCE_LOCATIONS;
+import static io.github.jhipster.sample.config.StaticResourcesWebConfiguration.RESOURCE_PATHS;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 

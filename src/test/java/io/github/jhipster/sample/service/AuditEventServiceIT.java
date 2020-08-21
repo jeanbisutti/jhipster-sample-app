@@ -1,15 +1,15 @@
 package io.github.jhipster.sample.service;
 
-import io.github.jhipster.sample.config.QuickPerfSpringConfiguration;
+import io.github.jhipster.config.JHipsterProperties;
+import io.github.jhipster.sample.JhipsterSampleApplicationApp;
 import io.github.jhipster.sample.domain.PersistentAuditEvent;
 import io.github.jhipster.sample.repository.PersistenceAuditEventRepository;
-import io.github.jhipster.sample.JhipsterSampleApplicationApp;
-import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = {JhipsterSampleApplicationApp.class, QuickPerfSpringConfiguration.class})
+@SpringBootTest(classes = JhipsterSampleApplicationApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired
